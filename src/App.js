@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import About from "./pages/About";
 import Credits from "./pages/Credits";
@@ -17,19 +17,17 @@ const Redirect = ({ to }) => {
 
 function App() {
   return (
-    <React.StrictMode>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            {/* <Route path="about" element={<About />} />
-            <Route path="credits" element={<Credits />} />
-            <Route path="search" element={<Search />} /> */}
-          </Route>
-          <Route path="*" element={<Redirect to="/" />} />
-        </Routes>
-      </BrowserRouter>
-    </React.StrictMode>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route exact path="/" element={<Home />} />
+          {/* <Route path="about" element={<About />} />
+          <Route path="credits" element={<Credits />} />
+          <Route path="search" element={<Search />} /> */}
+        </Route>
+        <Route path="*" element={<Redirect to="/" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
