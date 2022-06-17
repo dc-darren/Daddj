@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-sans text-daddj-700;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-daddj-900;
+  }
+
+  h1 { @apply text-5xl; }
+  h2 { @apply text-4xl; }
+  h3 { @apply text-3xl; }
+  h4 { @apply text-2xl; }
+  h5 { @apply text-xl; }
+  h6 { @apply text-lg; }
+  p { @apply text-base; }
+}
+
+@layer components {
+  .content {
+    @apply h-full flex flex-col gap-10 overflow-y-scroll p-10;
+  }
+
+  .hover-up {
+    @apply hover:-translate-y-0.5 transition-transform duration-300;
+  }
+}

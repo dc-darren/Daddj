@@ -1,10 +1,33 @@
+import { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import About from "./pages/About";
+import Credits from "./pages/Credits";
+import Home from "./pages/Home";
+import Layout from "./pages/Layout";
+import Search from "./pages/Search";
+
+const Redirect = ({ to }) => {
+  let navigate = useNavigate();
+  useEffect(() => {
+    navigate(to)
+  }, []);
+
+  return null;
+}
+
 function App() {
   return (
-    <div className="w-screen h-screen bg-daddj-100 flex flex-col justify-center items-center">
-      <img src="logo192.png" alt="Daddj" />
-      <h1 className="font-semibold text-5xl text-daddj-700 mt-6">Daddj</h1>
-      <h4 className="text-xl text-daddj-500 mt-3">Project is still in development...</h4>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          {/* <Route path="about" element={<About />} />
+          <Route path="credits" element={<Credits />} />
+          <Route path="search" element={<Search />} /> */}
+        </Route>
+        <Route path="*" element={<Redirect to="/" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
