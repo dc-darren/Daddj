@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/daddj/static/css/main.7439617b.css",
+    "main.js": "/daddj/static/js/main.4a4f735e.js",
+    "index.html": "/daddj/index.html",
+    "main.7439617b.css.map": "/daddj/static/css/main.7439617b.css.map",
+    "main.4a4f735e.js.map": "/daddj/static/js/main.4a4f735e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7439617b.css",
+    "static/js/main.4a4f735e.js"
+  ]
+}
