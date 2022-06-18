@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  * {
+  body {
     @apply font-sans text-daddj-700;
   }
 
@@ -18,6 +18,8 @@
   h5 { @apply text-xl; }
   h6 { @apply text-lg; }
   p { @apply text-base; }
+
+  .daddj-texts p { @apply text-lg; }
 }
 
 @layer components {
@@ -25,7 +27,19 @@
     @apply h-full flex flex-col gap-10 overflow-y-scroll p-10;
   }
 
+  .daddj-texts {
+    @apply flex flex-col gap-2;
+  }
+
+  .daddj-btn {
+    @apply w-[200px] flex justify-center items-center gap-[10px] rounded-md py-4 hover-up transition-all duration-300;
+  }
+
+  .daddj-link {
+    @apply inline-block font-semibold underline hover-up;
+  }
+
   .hover-up {
-    @apply hover:-translate-y-0.5 transition-transform duration-300;
+    @apply hover:-translate-y-[1.75px] transition-transform duration-300;
   }
 }
