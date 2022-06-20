@@ -11,8 +11,8 @@ const Home = () => {
       </Helmet>
       <div className="content justify-center items-center text-center">
         <h1>"I was going to get a brain transplant, but I changed my mind"</h1>
-        <div> {/* Actions */}
-          <div className="flex gap-5">
+        <div className="w-full lg:w-[unset]"> {/* Actions */}
+          <div className="flex flex-col lg:flex-row items-center gap-[10px] lg:gap-5">
             <PrimaryButton>
               <FiShuffle />
               <p>Get a Joke</p>

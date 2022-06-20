@@ -13,7 +13,7 @@ const About = () => {
         </div>
         <div className="daddj-texts">
           <h2>Features</h2>
-          <ul className="list-disc list-inside">
+          <ul className="list-disc ml-3">
             <li>Get a random dad joke</li>
             <li>Search for dad jokes by a keyword</li>
             <li>Obtain the image version of a specific dad joke</li>

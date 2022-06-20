@@ -9,22 +9,22 @@ const Search = () => {
         <title>Daddj | Search Results</title>
       </Helmet>
       <div className="content">
-        <div className="flex justify-between"> {/* Header */}
+        <div className="flex flex-col sm:flex-row justify-between gap-5"> {/* Header */}
           <h2>Found 99 Results for "keyword"</h2>
           <div id="daddj-pagination">
-            <div><FiChevronLeft /></div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
+            <div><p><FiChevronLeft /></p></div>
+            <div><p>1</p></div>
+            <div><p>2</p></div>
+            <div><p>3</p></div>
             <div className="dots pointer-events-none">...</div>
-            <div>5</div>
-            <div><FiChevronRight /></div>
+            <div><p>5</p></div>
+            <div><p><FiChevronRight /></p></div>
           </div>
         </div>
         <div className="flex flex-col gap-5 py-5"> {/* Search Results */}
           <div className="flex justify-between items-center gap-5">
             <h6 className="text-daddj-700">"This keyword is a joke"</h6>
-            <SecondaryButton href="/">
+            <SecondaryButton href="/" className="w-[180px] lg:w-[200px]">
               <FiPlay />
               <p>Show on Screen</p>
             </SecondaryButton>
@@ -32,7 +32,7 @@ const Search = () => {
           <hr />
           <div className="flex justify-between items-center gap-5">
             <h6 className="text-daddj-700">"This keyword is a joke"</h6>
-            <SecondaryButton href="/">
+            <SecondaryButton href="/" className="w-[180px] lg:w-[200px]">
               <FiPlay />
               <p>Show on Screen</p>
             </SecondaryButton>
@@ -40,7 +40,7 @@ const Search = () => {
           <hr />
           <div className="flex justify-between items-center gap-5">
             <h6 className="text-daddj-700">"This keyword is a joke"</h6>
-            <SecondaryButton href="/">
+            <SecondaryButton href="/" className="w-[180px] lg:w-[200px]">
               <FiPlay />
               <p>Show on Screen</p>
             </SecondaryButton>
@@ -48,7 +48,7 @@ const Search = () => {
           <hr />
           <div className="flex justify-between items-center gap-5">
             <h6 className="text-daddj-700">"This keyword is a joke"</h6>
-            <SecondaryButton href="/">
+            <SecondaryButton href="/" className="w-[180px] lg:w-[200px]">
               <FiPlay />
               <p>Show on Screen</p>
             </SecondaryButton>
@@ -56,7 +56,7 @@ const Search = () => {
           <hr />
           <div className="flex justify-between items-center gap-5">
             <h6 className="text-daddj-700">"This keyword is a joke"</h6>
-            <SecondaryButton href="/">
+            <SecondaryButton href="/" className="w-[180px] lg:w-[200px]">
               <FiPlay />
               <p>Show on Screen</p>
             </SecondaryButton>
@@ -64,7 +64,7 @@ const Search = () => {
           <hr />
           <div className="flex justify-between items-center gap-5">
             <h6 className="text-daddj-700">"This keyword is a joke"</h6>
-            <SecondaryButton href="/">
+            <SecondaryButton href="/" className="w-[180px] lg:w-[200px]">
               <FiPlay />
               <p>Show on Screen</p>
             </SecondaryButton>

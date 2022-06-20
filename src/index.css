@@ -11,15 +11,17 @@
     @apply font-semibold text-daddj-900;
   }
 
-  h1 { @apply text-5xl; }
-  h2 { @apply text-4xl; }
-  h3 { @apply text-3xl; }
-  h4 { @apply text-2xl; }
-  h5 { @apply text-xl; }
-  h6 { @apply text-lg; }
-  p { @apply text-base; }
+  h1 { @apply text-2xl sm:text-4xl lg:text-5xl; }
+  h2 { @apply text-xl sm:text-3xl lg:text-4xl; }
+  h3 { @apply text-lg sm:text-2xl lg:text-3xl; }
+  h4 { @apply text-base sm:text-xl lg:text-2xl; }
+  h5 { @apply text-sm sm:text-lg lg:text-xl; }
+  h6 { @apply text-xs sm:text-base lg:text-lg; }
+  p, li { @apply text-xs sm:text-sm lg:text-base; }
 
-  .daddj-texts p { @apply text-lg; }
+  .daddj-texts p, .daddj-texts li { @apply text-xs sm:text-base lg:text-lg; }
+
+  .daddj-img-link p { @apply text-sm sm:text-base lg:text-lg;  }
 
   input {
     @apply focus:outline-daddj-100;
@@ -32,7 +34,7 @@
 
 @layer components {
   .content {
-    @apply h-full flex flex-col gap-10 overflow-y-scroll p-10;
+    @apply h-full flex flex-col gap-4 sm:gap-6 lg:gap-10 overflow-y-scroll p-4 sm:p-6 lg:p-10;
   }
 
   .daddj-texts {
@@ -48,18 +50,18 @@
   }
 
   .daddj-btn {
-    @apply w-[200px] flex justify-center items-center gap-[10px] rounded-md py-4 hover-up transition-all duration-300;
+    @apply w-full sm:w-[180px] lg:w-[200px] flex justify-center items-center gap-[10px] rounded-md py-3 lg:py-4 hover-up transition-all duration-300;
   }
 
   .daddj-link {
     @apply w-fit inline-block font-semibold underline hover-up;
   }
 
-  #daddj-pagination { @apply flex; }
+  #daddj-pagination { @apply flex justify-end; }
 
   #daddj-pagination > * { @apply
-    w-10
-    h-10
+    w-8 sm:w-9 lg:w-10
+    h-8 sm:h-9 lg:h-10
     flex
     justify-center
     items-center
@@ -78,7 +80,7 @@
     hover:text-neutral-50
     hover:cursor-pointer
     transition-colors
-    duration-300
+    duration-300;
   }
 
   #daddj-pagination > .active { @apply
@@ -86,7 +88,7 @@
     text-neutral-50;
   }
 
-    .hover-up {
+  .hover-up {
     @apply hover:-translate-y-[1.75px] transition-transform duration-300;
   }
 }
