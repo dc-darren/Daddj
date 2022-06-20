@@ -20,6 +20,14 @@
   p { @apply text-base; }
 
   .daddj-texts p { @apply text-lg; }
+
+  input {
+    @apply focus:outline-daddj-100;
+  }
+
+  hr {
+    @apply border-daddj-700;
+  }
 }
 
 @layer components {
@@ -31,15 +39,54 @@
     @apply flex flex-col gap-2;
   }
 
+  .daddj-img {
+    @apply w-8 h-8;
+  }
+
+  .daddj-img-link {
+    @apply w-fit flex items-center gap-[10px];
+  }
+
   .daddj-btn {
     @apply w-[200px] flex justify-center items-center gap-[10px] rounded-md py-4 hover-up transition-all duration-300;
   }
 
   .daddj-link {
-    @apply inline-block font-semibold underline hover-up;
+    @apply w-fit inline-block font-semibold underline hover-up;
   }
 
-  .hover-up {
+  #daddj-pagination { @apply flex; }
+
+  #daddj-pagination > * { @apply
+    w-10
+    h-10
+    flex
+    justify-center
+    items-center
+    border-x
+    border-daddj-700
+    p-[10px];
+  }
+
+  #daddj-pagination > *:not(.dots) { @apply
+    border-y-2
+    first:border-l-2
+    first:rounded-l-md
+    last:border-r-2
+    last:rounded-r-md
+    hover:bg-daddj-700
+    hover:text-neutral-50
+    hover:cursor-pointer
+    transition-colors
+    duration-300
+  }
+
+  #daddj-pagination > .active { @apply
+    bg-daddj-700
+    text-neutral-50;
+  }
+
+    .hover-up {
     @apply hover:-translate-y-[1.75px] transition-transform duration-300;
   }
 }
