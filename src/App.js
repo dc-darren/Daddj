@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Credits from "./pages/Credits";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
+import NotFound from "./pages/NotFound";
 import Search from "./pages/Search";
 
 const Redirect = ({ to }) => {
@@ -21,11 +22,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route exact path="/" element={<Home />} />
-          {/* <Route path="about" element={<About />} />
+          <Route path="about" element={<About />} />
           <Route path="credits" element={<Credits />} />
-          <Route path="search" element={<Search />} /> */}
+          <Route path="search" element={<Search />} />
         </Route>
-        <Route path="*" element={<Redirect to="/" />} />
+        <Route path="*" element={<Layout />}>
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
