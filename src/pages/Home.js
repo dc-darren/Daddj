@@ -6,8 +6,7 @@ import Button from "../components/Button"
 import fetchData from "../fetchData"
 
 const Home = () => {
-  // const homepageUrl = "https://dc-darren.github.io/daddj"
-  const homepageUrl = "http://localhost:3000/"
+  const homepageUrl = "https://dc-darren.github.io/daddj/"
   const apiUrl = "https://icanhazdadjoke.com/"
   const [joke, setjoke] = useState({})
   const [jokeUrl, setjokeUrl] = useState("")
