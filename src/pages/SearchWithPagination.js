@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react"
+import { createElement, useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import { useSearchParams } from "react-router-dom"
-import { FiPlay, FiPlayCircle } from "react-icons/fi"
+import { FiChevronLeft, FiChevronRight, FiPlay } from "react-icons/fi"
 import Button from "../components/Button"
 import fetchData from "../fetchData"
 
-const Search = () => {
+const Search_ = () => {
   const apiUrl = "https://icanhazdadjoke.com/search"
   const [searchParams, setsearchParams] = useSearchParams()
   const [data, setdata] = useState({})
+  const [keyword, setkeyword] = useState(searchParams.get('s'))
   const [jokes, setjokes] = useState([])
   const [page, setpage] = useState(1)
-  const [keyword, setkeyword] = useState(searchParams.get('s'))
 
   let jokeIndex = 0
 
@@ -19,9 +19,9 @@ const Search = () => {
     return str.startsWith('"') && str.endsWith('"') ? true : false
   }
 
-  const getJokes = async (term) => {
+  const getJokes = async () => {
     await fetchData(`${apiUrl}?${new URLSearchParams({
-      term: term,
+      term: keyword,
       limit: 20,
       page: page,
     })}`)
@@ -39,17 +39,12 @@ const Search = () => {
   }, [searchParams])
 
   useEffect(() => {
-    getJokes(keyword)
+    getJokes()
   }, [keyword, page])
 
   useEffect(() => {
-    if (data.results) {
-      setjokes(jokes)
-      jokes.push(...data.results)
-      setjokes([...jokes])
-    }
-    if (data.current_page) setpage(data.current_page)
-  }, [data])
+    setjokes(data.results)
+  }, [data, jokes])
   
   return (
     <>
@@ -57,8 +52,19 @@ const Search = () => {
         <title>Daddj | Search Results</title>
       </Helmet>
       <div className="content">
-      <h2>Found {data ? data.total_jokes : 0} results {keyword !== '' ? `for "${keyword}"` : ''}</h2>
-        <div className="flex flex-col"> {/* Search Results */}
+        <div className="flex flex-col sm:flex-row justify-between gap-5"> {/* Header */}
+          <h2>Found {data ? data.total_jokes : 0} results {keyword !== '' ? `for "${keyword}"` : ''}</h2>
+          <div id="daddj-pagination">
+            {data ? (
+              <>
+                <button className={data.previous_page === page ? 'disabled' : ''} onClick={() => setpage(data.previous_page)}><p><FiChevronLeft /></p></button>
+                <button className="active"><p>{data.current_page}</p></button>
+                <button className={data.next_page === page ? 'disabled' : ''} onClick={() => setpage(data.next_page)}><p><FiChevronRight /></p></button>
+              </>
+            ) : ''}
+          </div>
+        </div>
+        <div className="flex flex-col py-3 sm:py-4 lg:py-5"> {/* Search Results */}
           {jokes ? jokes.map(joke => {
             jokeIndex++
             return(
@@ -71,15 +77,6 @@ const Search = () => {
                   </Button>
                 </div>
                 {jokeIndex !== jokes.length ? <hr className="my-3 sm:my-4 lg:my-5" /> : ''}
-                {jokeIndex === jokes.length ? (data.next_page !== page ? (
-                  <>
-                    <hr className="my-3 sm:my-4 lg:my-5" />
-                    <Button variant="primary" className="mx-auto" onClick={() => setpage(data.next_page)}>
-                      <FiPlayCircle />
-                      <p>Load more</p>
-                    </Button>
-                  </>
-                ) : '') : ''}
               </div>
             )
           }) : null}
@@ -89,4 +86,4 @@ const Search = () => {
   )
 }
 
-export default Search
+export default Search_

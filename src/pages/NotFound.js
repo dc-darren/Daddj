@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet"
 import { FiShuffle } from "react-icons/fi"
-import PrimaryButton from "../components/Button/Primary"
+import Button from "../components/Button"
 
 const NotFound = () => {
   return (
@@ -13,12 +13,12 @@ const NotFound = () => {
           <h1 className="text-7xl sm:text-8xl lg:text-9xl">404</h1>
           <h3 className="text-daddj-600 -mt-1">Page Not Found</h3>
         </div>
-        <div className="flex flex-col items-center gap-2 sm:gap-4 lg:gap-5"> {/* Content */}
+        <div className="w-full flex flex-col items-center gap-2 sm:gap-4 lg:gap-5"> {/* Content */}
           <p className="text-center">The page you're looking for doesn't exist. Get a joke instead :)</p>
-          <PrimaryButton href="/">
+          <Button href="/" variant="primary">
             <FiShuffle />
             <p>Get a Joke</p>
-          </PrimaryButton>
+          </Button>
         </div>
       </div>
     </>
