@@ -1,8 +1,10 @@
 # Daddj
 
-[Live Hosting](https://dc-darren.github.io/daddj) - [Repository](https://github.com/dc-darren/daddj)
+[Live Hosting](https://dc-darren.github.io/daddj) - [Repository](https://github.com/dc-darren/daddj) - [Mockup](https://www.figma.com/file/LGSOiRlk0elkF4voto3lSs/Daddj?node-id=1%3A5)
 
-Daddj /ˈdadē/ is the place to look up for dad jokes, fetched from the Public API icanhazdadjoke. Daddj is made for learning and entertainment purpose. Have fun :)
+![Daddj | Your Daily Dose of Dad Jokes](/public/cover.png "Daddj | Your Daily Dose of Dad Jokes")
+
+Daddj /ˈdadē/ is the place to look up for dad jokes, fetched from the Public API [icanhazdadjoke](https://icanhazdadjoke.com/). Daddj is made for learning and entertainment purpose. Have fun :)
 
 ## Features
 
